@@ -1,13 +1,20 @@
 <template>
     <v-app>
         <v-main>
-            <v-content>
-                <h1>Choose an image file</h1>
-                <v-file-input
-                    @change="getBase64()"
-                    v-model="fileInput"
-                    truncate-length="30"
-                ></v-file-input>
+            <v-container max-width="868px">
+                <v-card elevation="0">
+                    <v-card-title>
+                        Choose an image file
+                    </v-card-title>
+                    <v-card-text>
+                        <v-file-input
+                            @change="getBase64()"
+                            v-model="fileInput"
+                            truncate-length="30"
+                        ></v-file-input>
+                    </v-card-text>
+                </v-card>
+
                 <template v-if="base64">
                     <v-card elevation="0">
                         <v-card-text>
@@ -63,7 +70,7 @@
                         </v-card-actions>
                     </v-card>
                 </v-dialog>
-            </v-content>
+            </v-container>
         </v-main>
     </v-app>
 </template>
